@@ -70,9 +70,7 @@ uploaded_pdf = st.file_uploader("📄 Upload PDF", type=["pdf"])
 uploaded_image = st.file_uploader("🖼️ Upload Image", type=["png", "jpg", "jpeg"])
 
 ## displayes a chat history
-for chat in st.session_state.chat_history:
-    st.chat_message("user").write(chat["user"])
-    st.chat_message("assistant").write(chat["assistant"])
+
 
 ## input box
 question = st.chat_input("Ask your question")
@@ -95,3 +93,4 @@ if question:
     answer = multimodal_chat(question, pdf_text, image_desc)
 
     st.chat_message("assistant").write(answer)
+
