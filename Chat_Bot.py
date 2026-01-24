@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-os.environ["GROQ_API_KEY"]=""                              ## Add your Api key and Model name get it from a langchain_groq
+os.environ["GROQ_API_KEY"]=os.getenv("GROQ_API_KEY")                            ## Add your Api key and Model name get it from a langchain_groq
 llm=ChatGroq(model_name="openai/gpt-oss-120b")
 
 if "chat_history" not in st.session_state:
@@ -93,4 +93,5 @@ if uploaded_image:
 if question:
     st.chat_message("user").write(question)
     answer = multimodal_chat(question, pdf_text, image_desc)
+
     st.chat_message("assistant").write(answer)
