@@ -1,0 +1,8 @@
+langchain_groq
+streamlit
+gradio
+langchain
+langchain-groq
+pypdf
+pillow
+python-dotenv
